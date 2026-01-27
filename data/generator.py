@@ -1,3 +1,5 @@
+# TO RUN: python generator.py [some n]
+# EX: python generator.py 5
 import random
 import sys
 
