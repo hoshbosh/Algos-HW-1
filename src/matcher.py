@@ -1,4 +1,5 @@
 import get_input
+import time
 
 def stableMatching(preferences):
     n = len(preferences["preferences"]["hospitals"])
@@ -15,13 +16,13 @@ def stableMatching(preferences):
             matched = student in matches
             student_curr_prefs = preferences['preferences']['students'][student]
             if not matched:
-                matches[student] = curr
+                matches[curr] = student
                 break
 
 
             elif student_curr_prefs.index(curr) < student_curr_prefs.index(matches.index(student)):
                 matches[matches.index(student)] = None
-                matches[student] = curr
+                matches[curr] = student
             else:
                 continue
 
@@ -35,3 +36,7 @@ def matchingOutput(preferences):
     with open(f"..\\data\\n_{len(matches)}.out", "w") as f:
         for hospital, student in enumerate(matches):
             f.write(f"{hospital + 1} {student + 1}\n")
+
+
+#for local testing purposes
+#print(stableMatching(get_input.get_inputs('example.in')))
