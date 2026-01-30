@@ -21,8 +21,10 @@ def stableMatching(preferences):
 
 
             elif student_curr_prefs.index(curr) < student_curr_prefs.index(matches.index(student)):
+                replaced = matches.index(student)
                 matches[curr] = student
                 matches[matches.index(student)] = None
+                free.append(replaced)
             else:
                 continue
 
