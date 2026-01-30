@@ -23,5 +23,5 @@ def stable_check(fromFiles):
     print("stable matching found")
     
 # check("example.in", "example.out")
-check("stable.in", "stable.out")
+check("n_20.in", "n_20.out")
 # check("example.in", "invalid.out")

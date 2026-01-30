@@ -10,7 +10,7 @@ def get_inputs(rankings, matches = None):
     for i, v in enumerate(all_lines):
         curr = []
         for y in v.split(" "):
-            curr.append(int(y[0])-1)
+            curr.append(int(y)-1)
         preferences["hospitals" if i<n else "students"].append(curr)
 
     if not matches:
@@ -24,10 +24,10 @@ def get_inputs(rankings, matches = None):
     inv = {}
     for x in all_lines:
         for y in x.split(" "):
-            if y[0] not in inv:
-                inv[y[0]] = 1
+            if y not in inv:
+                inv[y] = 1
             else:
-                inv[y[0]] += 1
+                inv[y] += 1
     for _, freq in inv.items():
         if freq!=2:
             match_obj=None
@@ -35,7 +35,8 @@ def get_inputs(rankings, matches = None):
         match_obj = None
     if match_obj is not None:
         for x in all_lines:
-            match_obj.append(int(x[2])-1)
+            sep = x.split(" ")
+            match_obj.append(int(sep[2])-1)
 
     return {
             "preferences": preferences,
