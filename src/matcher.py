@@ -28,7 +28,10 @@ def stableMatching(preferences):
 
     return matches
 
+#creates output file
+def matchingOutput(preferences):
+    matches = stableMatching(preferences)
 
-
-#testing
-print(stableMatching(get_input.get_inputs('example.in')))
+    with open(f"..\\data\\n_{len(matches)}.out", "w") as f:
+        for hospital, student in enumerate(matches):
+            f.write(f"{hospital + 1} {student + 1}\n")
