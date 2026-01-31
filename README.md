@@ -35,13 +35,14 @@ of students.
 ## Graph
 
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/88fe8b7d-94d2-46f3-8d10-ed8a433d20a0" />
+
 Figure 1: Scatter Line Graph measuring the runtime of matcher.py with respect to the input size
 
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/a33217ae-93c5-4b20-bcb1-fe499c5c3587" />
+
 Figure 2: Scatter Line Graph measuring the runtime of checker.py with respect to the input size
 
 
+
 From these two graphs, the trend exhibited by both is that runtime increases exponentially as input size increases. 
-This exponential runtime scaling is consistent with the G-S algorithm's O(n^2) time complexity. (Not to be confused with Exponential Time Complexity)
-<img width="1400" height="1000" alt="image" src="https://github.com/user-attachments/assets/022ad15c-9c32-4b8c-9b19-ea08a7a34141" />
-Figure 3: Graph representation of different time complexities
+This exponential runtime scaling is consistent with the G-S algorithm's O(n^2) time complexity.
