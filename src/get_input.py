@@ -23,11 +23,14 @@ def get_inputs(rankings, matches = None):
 
     inv = {}
     for x in all_lines:
+        x = x[:-1]
+        print(x.split(" "))
         for y in x.split(" "):
             if y not in inv:
                 inv[y] = 1
             else:
                 inv[y] += 1
+    # print(inv)
     for _, freq in inv.items():
         if freq!=2:
             match_obj=None
@@ -36,7 +39,7 @@ def get_inputs(rankings, matches = None):
     if match_obj is not None:
         for x in all_lines:
             sep = x.split(" ")
-            match_obj.append(int(sep[2])-1)
+            match_obj.append(int(sep[1])-1)
 
     return {
             "preferences": preferences,

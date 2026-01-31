@@ -1,5 +1,6 @@
 from get_input import get_inputs
 
+import sys
 def check(input, output):
     fromFiles = get_inputs(input, output)
     if fromFiles["matches"] is None:
@@ -23,5 +24,5 @@ def stable_check(fromFiles):
     print("stable matching found")
     
 # check("example.in", "example.out")
-check("n_20.in", "n_20.out")
+check(f"n_{sys.argv[1]}.in", f"n_{sys.argv[1]}.out")
 # check("example.in", "invalid.out")
