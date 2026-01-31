@@ -1,4 +1,5 @@
 from get_input import get_inputs
+import sys
 import time
 
 def stableMatching(preferences):
@@ -35,11 +36,11 @@ def stableMatching(preferences):
 def matchingOutput(preferences):
     matches = stableMatching(preferences)
     print(matches)
-    with open(f"..\\data\\n_{len(matches)}.out", "w") as f:
+    with open(f"../data/n_{len(matches)}.out", "w") as f:
         for hospital, student in enumerate(matches):
             f.write(f"{hospital + 1} {student + 1}\n")
 
 
 #for local testing purposes
 #print(stableMatching(get_input.get_inputs('example.in')))
-matchingOutput(get_inputs("n_20.in"))
+matchingOutput(get_inputs(f"n_{sys.argv[1]}.in"))
