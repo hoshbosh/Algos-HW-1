@@ -1,7 +1,9 @@
 from get_input import get_inputs
+import sys
 import time
 
 def stableMatching(preferences):
+    start = time.perf_counter()
     n = len(preferences["preferences"]["hospitals"])
     free = [x for x in range(n)]
     matches = [None] * n
@@ -31,18 +33,18 @@ def stableMatching(preferences):
             else:
                 continue
 
-
+    end = time.perf_counter()
+    print(f"n = {n} -> {end-start}s")
     return matches
 
 #creates output file
 def matchingOutput(preferences):
     matches = stableMatching(preferences)
-    print(matches)
-    with open(f"..\\data\\n_{len(matches)}.out", "w") as f:
+    with open(f"../data/n_{len(matches)}.out", "w") as f:
         for hospital, student in enumerate(matches):
             f.write(f"{hospital + 1} {student + 1}\n")
 
 
 #for local testing purposes
 #print(stableMatching(get_inputs('n_200.in')))
-#matchingOutput(get_inputs("n_1000.in"))
+matchingOutput(get_inputs(f"n_{sys.argv[1]}.in"))

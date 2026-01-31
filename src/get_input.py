@@ -4,6 +4,9 @@ def get_inputs(rankings, matches = None):
 
     with open(f"../data/{rankings}", 'r') as file:
         all_lines = file.readlines()
+        if len(all_lines) == 0:
+            print("Empty preference list file")
+            quit()
     
     n = int(all_lines[0])
     all_lines.pop(0)
@@ -24,7 +27,6 @@ def get_inputs(rankings, matches = None):
     inv = {}
     for x in all_lines:
         x = x[:-1]
-        print(x.split(" "))
         for y in x.split(" "):
             if y not in inv:
                 inv[y] = 1
