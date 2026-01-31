@@ -45,4 +45,4 @@ def matchingOutput(preferences):
 
 #for local testing purposes
 #print(stableMatching(get_inputs('n_200.in')))
-matchingOutput(get_inputs("n_400.in"))
+#matchingOutput(get_inputs("n_1000.in"))
