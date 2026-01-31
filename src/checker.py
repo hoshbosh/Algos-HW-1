@@ -1,6 +1,7 @@
 from get_input import get_inputs
-
 import sys
+import time
+
 def check(input, output):
     fromFiles = get_inputs(input, output)
     if fromFiles["matches"] is None:
@@ -24,5 +25,8 @@ def stable_check(fromFiles):
     print("stable matching found")
     
 # check("example.in", "example.out")
+start = time.perf_counter()
 check(f"n_{sys.argv[1]}.in", f"n_{sys.argv[1]}.out")
+end = time.perf_counter()
+print(f"checking n = {sys.argv[1]} -> {end-start}s")
 # check("example.in", "invalid.out")
